@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Muhammad Arslan</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #212121;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .containere {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 20px;
+            min-width: 850px;
+            height: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+
+        }
+
+        .progress {
+            display: flex;
+            height: 20px;
+            border-radius: 10px;
+            width: 100%;
+            background-color: rgb(84, 84, 84);
+            position: relative;
+        }
+
+        .color-line {
+            background-color: aquamarine;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+
+        }
+
+        .counter {
+            position: absolute;
+            left: 50%;
+
+        }
+
+        .containere h1 {
+
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containere">
+        <h1>Please Wait...</h1>
+        <div class="progress">
+            <div class="counter">0%</div>
+            <div class="color-line">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <img src="2.jpg" alt="profile picture">
+        <header>
+            <h1>Muhammad Arslan</h1>
+            <p>Email: <a href="mailto:arslanakramsoftwareengineer@gmail.com">arslanakramsoftwareengineer@gmail.com</a>
+            </p>
+            <p>Contact info: +92 3104761362</p>
+            <p>Address: 198 shahdab colony c-block phase-2 Lahore</p>
+        </header>
+        <section>
+            <h2>Profile</h2>
+            <ul>
+                <li>Hello there! I’m Muhammad Arslan, a frontend web developer on an exciting journey of tech
+                    exploration. With a passion for HTML, CSS, and JavaScript, I’m driven by the thrill of crafting
+                    responsive and dynamic web solutions that merge technical skills with creative thinking.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Academic Information</h2>
+            <ul>
+                <li>
+
+                    <b>Education:BS Computer Science (Current)</b> <br>
+                    Minhaj University Lahore <br>
+                    2021 - 2025 <br>
+                    <br>
+                    <b>FSc. Pre-Engineering</b> <br>
+                    Punjab College Mian Channu <br>
+                    2018 - 2020 <br>
+
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Professional Skills</h2>
+            <ul>
+                <li>
+                    Web Development: HTML, CSS, JavaScript <br>
+                    CSS Frameworks: Bootstrap 5 <br>
+                    JavaScript Libraries: aos <br>
+                    Programming Languages: PHP, C++, SQL <br>
+                    Tools: Visual Studio, MS Office <br>
+                    Languages: Urdu, English, Punjabi <br>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal Details</h2>
+            <p>Date of Birth: 27 Sep 2003</p>
+            <p>Religion: Islam</p>
+            <p>Nationality: Pakistani</p>
+            <p>Languages: Urdu, English, Punjabi</p>
+            <p>Marital Status: Single</p>
+        </section>
+
+        <footer>
+            <p>References will be furnished on demand.</p>
+        </footer>
+    </div>
+    <script>
+        let container = document.querySelector(".container")
+        let count = document.querySelector(".counter")
+        let colorline = document.querySelector(".color-line")
+        let containere = document.querySelector(".containere")
+        let run = 0
+        let loeading = setInterval(progress, 80)
+        function progress() {
+            if (run == 100) {
+                clearInterval(loeading);
+                container.style.display = "block"
+                containere.style.display = "none"
+            } else {
+                run = run + 1;
+                colorline.style.width = run + "%";
+                count.innerHTML = run + "%";
+                container.style.display = "none"
+            }
+        }    
+    </script>
+</body>
+
+</html>
